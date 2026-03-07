@@ -1,6 +1,10 @@
 import { test } from '@playwright/test';
 import { MainPage } from '../pages/MainPage';
 
+test.beforeEach(async ({}, testInfo) => {
+    console.log(`[INFO]: Starting test: ${testInfo.title}`);
+});
+
 test.describe('Alerts, Frame & Windows Suite @alerts', () => {
     test('Test for Modal Dialogs: check new tab', async ({ page }) => {
         //Test data

@@ -8,7 +8,8 @@ The project follows the **Page Object Model (POM)** design pattern for better ma
 ## 🛠 Tech Stack
 * **Language:** TypeScript
 * **Framework:** Playwright (Test Runner & Library)
-* **CI/CD:** GitHub Actions
+* **Environment:** Docker & VS Code Dev Containers
+* **CI/CD:** GitHub Actions (with Caching & Docker)
 * **Reporting:** Playwright HTML Reporter
 
 ---
@@ -16,22 +17,22 @@ The project follows the **Page Object Model (POM)** design pattern for better ma
 ## 📑 Test Suites Overview
 The project covers 4 different sections of the DemoQA website to demonstrate various automation techniques:
 
-### 1. Elements Box Suite
+### 1. Elements Box Suite `@elements`
 * **Goal:** Verify form submission and data integrity.
 * **Actions:** Fill full name, email, and addresses; click Submit.
 * **Assertions:** Check if the output container matches the input data.
 
-### 2. Alerts, Frame & Windows Suite
+### 2. Alerts, Frame & Windows Suite `@alerts`
 * **Goal:** Test multi-tab browser behavior.
 * **Actions:** Click 'New Tab' button and switch context.
 * **Assertions:** Verify text content on the newly opened page.
 
-### 3. Interaction Suite
+### 3. Interaction Suite `@interactions`
 * **Goal:** Automate mouse actions and element resizing.
 * **Actions:** Target the resize handle and drag it using coordinates.
 * **Assertions:** Calculate and verify the new dimensions of the box.
 
-### 4. Widgets Suite
+### 4. Widgets Suite `@widgets`
 * **Goal:** Handle dynamic dropdowns and auto-complete fields.
 * **Actions:** Type partial names and select items from suggestions.
 * **Assertions:** Verify that all selected items are present in the multi-value container.
@@ -48,30 +49,47 @@ Make sure you have [Node.js](https://nodejs.org/) installed (LTS version recomme
 git clone <https://github.com/knackiuz/Playwright_Typescript_Tests>
 cd <project-folder>
 
+### Option 1: Using Dev Containers (Recommended)
+This project is pre-configured for **VS Code Dev Containers**. This is the easiest way to start without installing Node.js or browsers locally.
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+2. Open this project in VS Code.
+3. Click **"Reopen in Container"** when prompted. 
+4. Everything (Node.js, Playwright, Browsers) will be set up automatically.
+
+### Option 2: Local Installation
 ### 2. Install dependencies
-# Install NPM packages (creates node_modules)
+### Install NPM packages (creates node_modules)
 npm install
 
-# Install Playwright browsers and system dependencies
+### Install Playwright browsers and system dependencies
 npx playwright install --with-deps
 
 ### 3. Run Tests
-# Run all tests in Headless mode (fastest)
+### Run all tests in Headless mode (4 workers by default)
 npx playwright test
 
-# Run tests in UI Mode (interactive, great for debugging)
+### Run tests with a specific tag
+npx playwright test --grep @alerts
+
+### Run tests in UI Mode (interactive, great for debugging)
 npx playwright test --ui
 
-# Run a specific test file
+### Run a specific test file
 npx playwright test tests/Widgets.spec.ts
 
 📊 Reporting & CI/CD
 
-# After the tests finish, you can view a detailed HTML report:
+### After the tests finish, you can view a detailed HTML report:
 npx playwright show-report
+
+### GitHub Actions
+* Tests run automatically on every push or pull request
+* The project is configured to run in 4 parallel workers for maximum efficiency
+* Parallelism is managed via playwright.config.ts
 
 ### 📂 Project Structure
 * tests/ — Test specification files (.spec.ts)
 * pages/ — Page Object classes (Selectors and Actions)
+* .devcontainer/ — Docker development environment settings
 * .github/workflows/ — CI/CD pipeline configuration
 * playwright.config.ts — Global settings (timeouts, retries, browser projects)

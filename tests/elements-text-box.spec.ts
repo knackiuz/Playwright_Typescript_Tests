@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 import { MainPage } from '../pages/MainPage';
 
+test.beforeEach(async ({}, testInfo) => {
+    console.log(`[INFO]: Starting test: ${testInfo.title}`);
+});
+
 test.describe('Elements Box Suite @elements', () => {
 
     test('Test for Edit fields: enter data, confirm and check result', async ({ page }) => {        

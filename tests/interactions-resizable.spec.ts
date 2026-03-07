@@ -1,7 +1,9 @@
 import test from "@playwright/test";
 import { MainPage } from "../pages/MainPage";
 
-
+test.beforeEach(async ({}, testInfo) => {
+    console.log(`[INFO]: Starting test: ${testInfo.title}`);
+});
 
 test.describe('Interaction Suite @interactions', () => {
     test('Test for Interactions: resize box and check size after the action', async ({ page }) => {
