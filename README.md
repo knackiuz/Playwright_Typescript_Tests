@@ -87,6 +87,14 @@ npx playwright show-report
 * The project is configured to run in 4 parallel workers for maximum efficiency
 * Parallelism is managed via playwright.config.ts
 
+## 📊 Reporting & Analytics
+This project uses **Allure Report** to provide deep insights into test execution. 
+
+### Features:
+* **Visual Dashboards:** Track pass/fail rates over time.
+* **Step-by-Step Logs:** See exactly where a test failed with integrated `[INFO]` logs. [cite: 2026-03-07]
+* **Environment Info:** Details about the Docker container and browser versions.
+
 ### 📂 Project Structure
 * tests/ — Test specification files (.spec.ts)
 * pages/ — Page Object classes (Selectors and Actions)

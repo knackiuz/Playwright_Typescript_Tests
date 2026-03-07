@@ -25,6 +25,22 @@ jobs:
 
     - name: Run Playwright tests
       run: npx playwright test
+      if: always() # Ensure that the tests run even if previous steps fail
+    
+    - name: Generate Allure Report
+      uses: simple-elf/allure-report-action@master
+      if: always() # Ensure that the report is generated even if tests fail
+      with:
+        allure-results: allure-results
+        allure-history: allure-history
+        keep-reports: 20
+
+    - name: Deploy Allure Report to GitHub Pages      
+      if: always() # Ensure that the deployment runs even if report generation fails
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./allure-history
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
