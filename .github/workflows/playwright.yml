@@ -31,9 +31,9 @@ jobs:
       uses: simple-elf/allure-report-action@master
       if: always() # Ensure that the report is generated even if tests fail
       with:
-        allure-results: allure-results
-        allure-history: allure-history
-        keep-reports: 20
+        allure_results: allure-results
+        allure_history: allure-history
+        keep_reports: 20
 
     - name: Deploy Allure Report to GitHub Pages      
       if: always() # Ensure that the deployment runs even if report generation fails
