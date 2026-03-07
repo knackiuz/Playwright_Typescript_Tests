@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { MainPage } from '../pages/MainPage';
 
-test.describe('Elements Box Suite', () => {
+test.describe('Elements Box Suite @elements', () => {
 
     test('Test for Edit fields: enter data, confirm and check result', async ({ page }) => {        
         //Test data

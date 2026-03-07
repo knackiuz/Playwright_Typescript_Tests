@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import { MainPage } from '../pages/MainPage';
 
 
-test.describe('Widgets Suite', () => {
+test.describe('Widgets Suite @widgets', () => {
     test('Test for Auto Complete: enter part of color name, wait for dropdown, then select required color and check that right colors are selected', async ({ page }) => {
         //Test data
         const firstColorName: string = "Red";

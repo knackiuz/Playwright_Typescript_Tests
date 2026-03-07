@@ -3,7 +3,7 @@ import { MainPage } from "../pages/MainPage";
 
 
 
-test.describe('Interaction Suite', () => {
+test.describe('Interaction Suite @interactions', () => {
     test('Test for Interactions: resize box and check size after the action', async ({ page }) => {
         //Test data
         const wight: number = 150;

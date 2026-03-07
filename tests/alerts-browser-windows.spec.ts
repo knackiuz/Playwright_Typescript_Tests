@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { MainPage } from '../pages/MainPage';
 
-test.describe('Alerts, Frame & Windows Suite', () => {
+test.describe('Alerts, Frame & Windows Suite @alerts', () => {
     test('Test for Modal Dialogs: check new tab', async ({ page }) => {
         //Test data
         const expectedText: string = "This is a sample page";
