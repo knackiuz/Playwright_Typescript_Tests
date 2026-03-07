@@ -1,0 +1,1 @@
+[INFO]: Starting test: Test for Modal Dialogs: check new tab

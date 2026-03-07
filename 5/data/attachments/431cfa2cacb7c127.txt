@@ -1,0 +1,3 @@
+[INFO]: Starting test: Test for Interactions: resize box and check size after the action
+[INFO]: Resizing box to: 150x50
+[INFO]: Size successfully verified: 340x240

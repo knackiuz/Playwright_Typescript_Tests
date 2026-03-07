@@ -1,0 +1,1 @@
+[INFO]: Starting test: Test for Auto Complete: enter part of color name, wait for dropdown, then select required color and check that right colors are selected

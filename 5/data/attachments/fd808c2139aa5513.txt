@@ -1,0 +1,1 @@
+[INFO]: Starting test: Test for Edit fields: enter data, confirm and check result
