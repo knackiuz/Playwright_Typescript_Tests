@@ -8,7 +8,7 @@ test.beforeEach(async ({}, testInfo) => {
 test.describe('Interaction Suite @interactions', () => {
     test('Test for Interactions: resize box and check size after the action', async ({ page }) => {
         //Test data
-        const wight: number = 150;
+        const width: number = 150;
         const height: number = 50;
         const borderSize: number = 10;
 
@@ -28,9 +28,9 @@ test.describe('Interaction Suite @interactions', () => {
         const resizablePage = await interactionsPage.selectResizableMenu();
 
         //Resize box
-        await resizablePage.resizeBox(wight, height);
+        await resizablePage.resizeBox(width, height);
 
         //Verify resized box size
-        await resizablePage.verifyResizableBoxSize(200 + wight - borderSize, 200 + height - borderSize);
+        await resizablePage.verifyResizableBoxSize(200 + width - borderSize, 200 + height - borderSize);
     })
 });
