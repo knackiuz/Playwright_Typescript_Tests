@@ -41,7 +41,7 @@ jobs:
 
     - name: Deploy Allure Report to GitHub Pages      
       if: always()
-      uses: peaceiris/actions-gh-pages@v3 # Deploy the generated Allure report to GitHub Pages for easy access and sharing
+      uses: peaceiris/actions-gh-pages@v4 # Deploy the generated Allure report to GitHub Pages for easy access and sharing
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }} # Use the GitHub token for authentication, ensuring secure deployment
         publish_dir: ./allure-history # Directory containing the generated Allure report, adjust if different
