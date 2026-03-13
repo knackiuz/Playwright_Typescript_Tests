@@ -6,7 +6,7 @@ test.beforeEach(async ({}, testInfo) => {
 });
 
 test.describe('Alerts, Frame & Windows Suite @alerts', () => {
-    test('Test for Modal Dialogs: check new tab', async ({ page }) => {
+    test('Test for Browser Windows: check new tab', async ({ page }) => {
         //Test data
         const expectedText: string = "This is a sample page";
 
@@ -16,7 +16,7 @@ test.describe('Alerts, Frame & Windows Suite @alerts', () => {
         //Navigate to main page
         await mainPage.navigate();
 
-        //Verify that main page ios loaded - check home banner
+        //Verify that main page is loaded - check home banner
         await mainPage.verifyMainPageIsLoaded();
 
         //Click on card 'Alerts, Frame & Windows'
@@ -29,7 +29,7 @@ test.describe('Alerts, Frame & Windows Suite @alerts', () => {
         await browserWindowsPage.clickNewTabAndCheckText(expectedText);
     });
 
-    test('Test for Modal Dialogs: check new window', async ({ page }) => {
+    test('Test for Browser Windows: check new window', async ({ page }) => {
         //Test data
         const expectedText: string = "This is a sample page";
 
@@ -39,7 +39,7 @@ test.describe('Alerts, Frame & Windows Suite @alerts', () => {
         //Navigate to main page
         await mainPage.navigate();
 
-        //Verify that main page ios loaded - check home banner
+        //Verify that main page is loaded - check home banner
         await mainPage.verifyMainPageIsLoaded();
         
         //Click on card 'Alerts, Frame & Windows'
@@ -52,7 +52,7 @@ test.describe('Alerts, Frame & Windows Suite @alerts', () => {
         await browserWindowsPage.clickNewWindowAndCheckText(expectedText);
     });
 
-    test('Test for Modal Dialogs: check new window message', async ({ page }) => {
+    test('Test for Browser Windows: check new window message', async ({ page }) => {
         //Test data
         const expectedText: string = "Knowledge increases by sharing but not by saving. Please share this website with your friends and in your organization.";
 
@@ -62,7 +62,7 @@ test.describe('Alerts, Frame & Windows Suite @alerts', () => {
         //Navigate to main page
         await mainPage.navigate();
 
-        //Verify that main page ios loaded - check home banner
+        //Verify that main page is loaded - check home banner
         await mainPage.verifyMainPageIsLoaded();
 
         //Click on card 'Alerts, Frame & Windows'
@@ -73,5 +73,28 @@ test.describe('Alerts, Frame & Windows Suite @alerts', () => {
 
         //Click button 'New Window Message' and check displayed text
         await browserWindowsPage.clickNewWindowMessageAndCheckText(expectedText);
+    });
+
+    test('Test for Alerts: check see alert - check that alert with text is displayed after clicking', async ({ page }) => {
+        //Test data
+        const expectedText: string = "You clicked a button";
+
+        //Define main page
+        const mainPape = new MainPage(page);
+
+        //Navigate to main page
+        await mainPape.navigate();
+
+        //Verify that main page is loaded - check home banner
+        await mainPape.verifyMainPageIsLoaded();
+        
+        //Click on card 'Alerts, Frame & Windows'
+        const alertsFrameWindowsPage = await mainPape.clickOnAlertsFrameWindowsCard();
+
+        //Click on menu 'Alerts'
+        const alertsPage = await alertsFrameWindowsPage.selectAlertsMenu();
+
+        //Click button 'See Alert' and check that alert with text is displayed
+        await alertsPage.clickButtonToSeeAlert();
     });
 });

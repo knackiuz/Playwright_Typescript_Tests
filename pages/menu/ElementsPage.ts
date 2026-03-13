@@ -1,5 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { TextBoxPage } from "../TextBoxPage";
+import { CheckBoxPage } from "../CheckBoxPage";
 
 
 export class ElementsPage {
@@ -14,5 +15,11 @@ export class ElementsPage {
     async selectTextBoxMenu(): Promise<TextBoxPage>{
         await this.textBoxMenu.click();
         return new TextBoxPage(this.page);
+    }
+
+    async selectCheckBoxMenu(): Promise<CheckBoxPage>{
+        const checkBoxMenu = this.page.getByText("Check Box");
+        await checkBoxMenu.click();
+        return new CheckBoxPage(this.page);
     }
 }

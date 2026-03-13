@@ -1,8 +1,8 @@
 import { expect, Locator, Page } from "@playwright/test";
 import { ElementsPage } from "./menu/ElementsPage";
-import { AlertsFrameWindowsPage } from "./menu/AlertsFrameWindowsPage";
 import { WidgetsPage } from "./menu/WidgetsPage";
 import { InteractionsPage } from "./menu/InteractionsPage";
+import { AlertsFrameWindowsPage } from "./menu/AlertsFrameWindowsPage";
 
 
 export class MainPage {
