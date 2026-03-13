@@ -1,0 +1,4 @@
+[INFO]: Starting test: Test for Slider: set value - move the slider with arrows and check set value
+[INFO]: Setting slider value to: 50
+[INFO]: Slider value set to: 50
+[INFO]: Checking slider value. Expected: 50
