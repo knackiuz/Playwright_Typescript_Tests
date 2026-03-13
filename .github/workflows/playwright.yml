@@ -27,10 +27,13 @@ jobs:
       #run: npx playwright install --with-deps
       run: npx playwright install chromium # Install only Chromium to save time and resources, adjust as needed for other browsers
 
+    - name: Clear old Allure results
+      run: rm -rf allure-results/* allure-history/* # Clear old Allure results to ensure only the latest test results are used for report generation
+
     - name: Run Playwright tests
       run: npx playwright test # Use the list reporter for better readability in CI logs
-      if: always() # Ensure that the tests run even if previous steps fail
-    
+      if: always() # Ensure that the tests run even if previous steps fail        
+
     - name: Generate Allure Report
       uses: simple-elf/allure-report-action@master # Generate Allure report from test results, ensuring it runs regardless of test outcomes
       if: always()
