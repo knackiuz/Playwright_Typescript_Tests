@@ -1,0 +1,1 @@
+[INFO]: Starting test: Test for Alerts: check see alert - check that alert with text is displayed after clicking

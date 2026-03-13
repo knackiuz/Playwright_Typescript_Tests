@@ -1,0 +1,8 @@
+[INFO]: Starting test: Test for Check Box: check main box and verify that all sub boxes are checked
+Verify that 'Desktop' checkbox is hidden
+Click on 'Home' expand/collapse button
+Click on 'Home' checkbox
+Verify that 'Home' checkbox is checked
+Verify that 'Desktop' checkbox is visible
+Click on 'Home' expand/collapse button
+Verify that 'Desktop' checkbox is hidden

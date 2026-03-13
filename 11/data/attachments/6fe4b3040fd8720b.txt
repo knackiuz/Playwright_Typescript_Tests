@@ -1,1 +1,0 @@
-[INFO]: Starting test: Test for Modal Dialogs: check new window message
