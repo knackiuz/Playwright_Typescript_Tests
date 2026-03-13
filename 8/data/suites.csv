@@ -1,5 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","4336","Test for Interactions: resize box and check size after the action","chromium","Tue Mar 10 21:14:55 UTC 2026","passed","Tue Mar 10 21:14:59 UTC 2026","Interaction Suite @interactions","interactions-resizable.spec.ts","",""
-"","4355","Test for Edit fields: enter data, confirm and check result","chromium","Tue Mar 10 21:14:55 UTC 2026","passed","Tue Mar 10 21:14:59 UTC 2026","Elements Box Suite @elements","elements-text-box.spec.ts","",""
-"","4559","Test for Auto Complete: enter part of color name, wait for dropdown, then select required color and check that right colors are selected","chromium","Tue Mar 10 21:14:55 UTC 2026","passed","Tue Mar 10 21:15:00 UTC 2026","Widgets Suite @widgets","widgets-autocomplete.spec.ts","",""
-"","3825","Test for Modal Dialogs: check new tab","chromium","Tue Mar 10 21:14:55 UTC 2026","passed","Tue Mar 10 21:14:59 UTC 2026","Alerts, Frame & Windows Suite @alerts","alerts-browser-windows.spec.ts","",""
