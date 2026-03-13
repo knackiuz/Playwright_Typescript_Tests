@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4103","Test for Interactions: resize box and check size after the action","chromium","Fri Mar 13 08:28:55 UTC 2026","passed","Fri Mar 13 08:28:59 UTC 2026","Interaction Suite @interactions","interactions-resizable.spec.ts","",""
+"","5463","Test for Modal Dialogs: check new window","chromium","Fri Mar 13 08:28:50 UTC 2026","passed","Fri Mar 13 08:28:56 UTC 2026","Alerts, Frame & Windows Suite @alerts","alerts-browser-windows.spec.ts","",""
+"","7452","Test for Edit fields: enter data, confirm and check result","chromium","Fri Mar 13 08:28:50 UTC 2026","passed","Fri Mar 13 08:28:58 UTC 2026","Elements Box Suite @elements","elements-text-box.spec.ts","",""
+"","3697","Test for Auto Complete: enter part of color name, wait for dropdown, then select required color and check that right colors are selected","chromium","Fri Mar 13 08:28:56 UTC 2026","passed","Fri Mar 13 08:29:00 UTC 2026","Widgets Suite @widgets","widgets-autocomplete.spec.ts","",""
+"","5371","Test for Modal Dialogs: check new tab","chromium","Fri Mar 13 08:28:50 UTC 2026","passed","Fri Mar 13 08:28:56 UTC 2026","Alerts, Frame & Windows Suite @alerts","alerts-browser-windows.spec.ts","",""
+"","4460","Test for Modal Dialogs: check new window message","chromium","Fri Mar 13 08:28:50 UTC 2026","passed","Fri Mar 13 08:28:55 UTC 2026","Alerts, Frame & Windows Suite @alerts","alerts-browser-windows.spec.ts","",""
