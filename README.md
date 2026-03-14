@@ -11,6 +11,8 @@ The project follows the **Page Object Model (POM)** design pattern for better ma
 * **Environment:** Docker & VS Code Dev Containers
 * **CI/CD:** GitHub Actions (with Caching & Docker)
 * **Reporting:** Playwright HTML Reporter
+* **Jenkins** — CI/CD automation within a Dockerized environment.
+* **Network Interception:** Playwright API Request/Response mocking.
 
 ---
 
@@ -36,6 +38,12 @@ The project covers 4 different sections of the DemoQA website to demonstrate var
 * **Goal:** Handle dynamic dropdowns and auto-complete fields.
 * **Actions:** Type partial names and select items from suggestions.
 * **Assertions:** Verify that all selected items are present in the multi-value container.
+
+### 5. Network Mocking Suite `@network-mocking`
+* **Goal:** Test frontend resilience and API data handling.
+* **Scenarios:**
+    - Intercepting API responses to simulate 500 Internal Server Error and verify UI error handling.
+    - Mocking dynamic device lists to verify data rendering without relying on a live backend.
 
 ---
 
@@ -87,6 +95,13 @@ npx playwright show-report
 * The project is configured to run in 4 parallel workers for maximum efficiency
 * Parallelism is managed via playwright.config.ts
 
+## ⚙️ Jenkins Pipeline
+The project includes a Jenkinsfile optimized for running in a Dockerized environment:
+* Infrastructure: Runs on a Jenkins agent with pre-configured Node.js and system dependencies.
+* Browser Caching: Optimized to use .cache/ms-playwright to avoid redundant browser downloads.
+* Reporting: Integrated with HTML Publisher Plugin to display Playwright results directly in the Jenkins build interface.
+* Security: Configured to handle Content Security Policy (CSP) for proper report rendering.
+
 ## 📊 Reporting & Analytics
 This project uses **Allure Report** to provide deep insights into test execution. 
 
@@ -95,9 +110,17 @@ This project uses **Allure Report** to provide deep insights into test execution
 * **Step-by-Step Logs:** See exactly where a test failed with integrated `[INFO]` logs. [cite: 2026-03-07]
 * **Environment Info:** Details about the Docker container and browser versions.
 
+### CI/CD Infrastructure (Local Jenkins)
+## Run Jenkins Container:
+* ```bash```
+docker run -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home -v //var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:lts
+
+
+
 ### 📂 Project Structure
 * tests/ — Test specification files (.spec.ts)
 * pages/ — Page Object classes (Selectors and Actions)
 * .devcontainer/ — Docker development environment settings
 * .github/workflows/ — CI/CD pipeline configuration
 * playwright.config.ts — Global settings (timeouts, retries, browser projects)
+* Jenkinsfile - CI/CD pipeline definition for automated builds and reporting.
