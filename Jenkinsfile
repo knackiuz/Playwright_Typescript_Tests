@@ -18,7 +18,14 @@ pipeline {
     
     post {
         always {
-            echo 'Pipeline finished. Checkout reports if HTML Publisher plugin is installed.'
+            publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'playwright-report',
+                reportFiles: 'index.html',
+                reportName: 'Playwright HTML Report'
+            ])
         }
         cleanup {
             cleanWs()
