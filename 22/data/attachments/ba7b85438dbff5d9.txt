@@ -1,0 +1,1 @@
+[INFO]: Starting test: Should mock device list with custom data

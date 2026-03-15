@@ -1,0 +1,7 @@
+[INFO]: Starting test: Test for Radio buttons: select, verify and check that not enabled
+Verify that 'Yes' radio button is selected
+Verify that 'Impressive' radio button is not selected
+Click on 'Impressive' radio button
+Verify that 'Impressive' radio button is selected
+Verify that 'Yes' radio button is not selected
+Verify that 'No' radio button is disabled

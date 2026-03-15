@@ -1,0 +1,1 @@
+[INFO]: Starting test: Should show error message when API returns 500
