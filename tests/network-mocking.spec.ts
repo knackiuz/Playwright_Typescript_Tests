@@ -1,6 +1,9 @@
 import test, { expect } from "@playwright/test";
 import { title } from "node:process";
 
+test.beforeEach(async ({}, testInfo) => {
+    console.log(`[INFO]: Starting test: ${testInfo.title}`);
+});
 
 test.describe('Network Mocking Suite @network-mocking', () => {
     test('Should show error message when API returns 500', async ({ page }) => {
