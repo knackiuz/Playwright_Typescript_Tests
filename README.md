@@ -45,6 +45,13 @@ The project covers 4 different sections of the DemoQA website to demonstrate var
     - Intercepting API responses to simulate 500 Internal Server Error and verify UI error handling.
     - Mocking dynamic device lists to verify data rendering without relying on a live backend.
 
+### 6. API Testing Suite `@api`
+* **File:** `api-tests.spec.ts`
+* **Goal:** Verify REST API endpoints and data integrity using **JSONPlaceholder**.
+* **Features:** * Strict schema validation using **TypeScript Interfaces**.
+    * Deep object comparison for complex nested JSON (Address, Geo, Company).
+    * Status code validation and response body parsing.
+
 ---
 
 ## 🚀 Getting Started
